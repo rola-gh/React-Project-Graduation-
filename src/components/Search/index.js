@@ -8,15 +8,16 @@ function onChange(e) {
     console.log(`checked = ${e.target.checked}`);
 }
 
-function Search() {
+
+function Search({params , onParamChang}) {
     return (
         <S.Wrapper>
-            <Input size="medium" placeholder="Filter by text .." prefix={<FontAwesomeIcon icon={faSearch} color='rgb(89,100,224)' size="lg"/>} />
-            <Input size="medium" placeholder="Filter by location .." prefix={<FontAwesomeIcon icon={faMapMarkerAlt} color='rgb(89,100,224)' size="lg"/>} />
-           <div>
-               <Checkbox onChange={onChange}>Full Time Only</Checkbox>
-               <Button type="primary">Search</Button>
-           </div>
+            <Input  size="large" placeholder="  Filter by text .." prefix={<FontAwesomeIcon icon={faSearch} color='rgb(89,100,224)' size="lg"/>} />
+            <S.Border/>
+            <Input size="large" placeholder="  Filter by location .." prefix={<FontAwesomeIcon icon={faMapMarkerAlt} color='rgb(89,100,224)' size="lg"/>} />
+            <S.Border/>
+            <Checkbox onChange={onChange}  className='checkbox'>Full Time Only</Checkbox>
+            <Button type="primary" className='btn-search'>Search</Button>
         </S.Wrapper>
 
     );

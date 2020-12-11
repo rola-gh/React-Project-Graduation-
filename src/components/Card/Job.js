@@ -1,5 +1,5 @@
 import { Card  ,Skeleton  } from 'antd';
-// import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEye} from "@fortawesome/free-solid-svg-icons";
 import moment from 'moment-timezone'
@@ -21,7 +21,7 @@ export default function Job({job}) {
     <>
         <Card
             style={{ width: 470,borderRadius:7 ,padding:5, marginTop: 16 , boxShadow:'0.5px 0.5px lightgray' }}
-            extra={<a href="#"><FontAwesomeIcon icon={faEye}  size="lg" color='rgb(89,100,224)' />&nbsp;VIEW DETAILS</a>}
+            extra={<Link to={`/details/${job.id}`}><FontAwesomeIcon icon={faEye}  size="lg" color='rgb(89,100,224)' />&nbsp;VIEW DETAILS</Link>}
         >
             <S.Charcompany style={{backgroundColor:RandomRGB()}}>{job.company.charAt(0)}</S.Charcompany>
             <Skeleton loading={false} >

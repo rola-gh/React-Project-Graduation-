@@ -1,3 +1,16 @@
+const AntDesignThemePlugin = require('antd-theme-webpack-plugin');
+
+const options = {
+    antDir: path.join(__dirname, './node_modules/antd'),
+    stylesDir: path.join(__dirname, './src/styles'),
+    varFile: path.join(__dirname, './src/styles/variables.less'),
+    themeVariables: ['@primary-color'],
+    indexFileName: 'index.html'
+}
+
+const themePlugin = new AntDesignThemePlugin(options);
+// In plugins section, add this plugin instance
+// plugins: [ themePlugin, some other plugins ]
 // webpack.config.js
 module.exports = {
     rules: [{

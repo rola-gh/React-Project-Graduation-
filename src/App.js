@@ -1,17 +1,22 @@
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import Details from "./pages/Details";
 import Header from './components/Header'
-import Search from './components/Search'
-import Card from './components/Card'
-
-import './App.less';
+import './App.less'
 
 function App() {
+
   return (
-    <div className="App">
-        <Header/>
-        <Search/>
-        <Card/>
-    </div>
-  );
+      <Router>
+          <div>
+              <Header/>
+              <Switch>
+                  <Route exact path="/" component={HomePage} />
+                  <Route path="/details/:id" component={Details} />
+              </Switch>
+          </div>
+      </Router>
+);
 }
 
 export default App;

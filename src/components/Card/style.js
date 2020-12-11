@@ -8,7 +8,7 @@ export const CardJob = styled.div`
     align-items: center;
     /*margin-top: -1.5rem;*/
     /*margin-bottom: 1.5rem;*/
-    margin: 20px;
+    margin: 22px;
 `;
 
 export const Charcompany = styled.div`

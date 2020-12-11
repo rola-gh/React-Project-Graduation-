@@ -16,3 +16,10 @@ export const Logo = styled.p`
     margin:0;
     
 `
+export const Theme = styled.div`
+	position: absolute;
+	right:35px;
+	top:30px;
+	display: flex;
+`
+

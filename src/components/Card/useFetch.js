@@ -15,8 +15,8 @@ function reducer(state, action) {
             return { ...state, loading: false, jobs: action.payload.jobs };
         case "error":
             return { ...state, loading: false, error: action.payload.error, jobs: [] };
-        case "update_more":
-            return { ...state, more: action.payload.more };
+        // case "update_more":
+        //     return { ...state, more: action.payload.more };
         default:
             return state
     }
@@ -37,10 +37,10 @@ export default  function useFetch(params){
             if(axios.isCancel(e))return
             dispatch({type:"error", payload: {error: e} })
         })
-
-        // return () =>{
-        //     cancelToken.cancel()
-        // }
+	    //cleanup
+        return () =>{
+            cancelToken.cancel()
+        }
     } , [params]);
     return state
 }

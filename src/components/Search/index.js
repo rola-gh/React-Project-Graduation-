@@ -4,19 +4,31 @@ import { Checkbox , Input ,Button } from 'antd';
 
 import * as S from './style'
 
-function onChange(e) {
-    console.log(`checked = ${e.target.checked}`);
-}
+// function onChange(e) {
+//     console.log(`checked = ${e.target.checked}`);
+// }
 
 
 function Search({params , onParamChang}) {
+    console.log('param', params)
     return (
         <S.Wrapper>
-            <Input  size="large" placeholder="  Filter by text .." prefix={<FontAwesomeIcon icon={faSearch} color='rgb(89,100,224)' size="lg"/>} />
+            <Input  size="large" placeholder="  Filter by text .."
+                    prefix={<FontAwesomeIcon icon={faSearch} color='rgb(89,100,224)' size="lg"/>}
+                    onChange={onParamChang} value={params.description} name = 'description' type='text'
+            />
             <S.Border/>
-            <Input size="large" placeholder="  Filter by location .." prefix={<FontAwesomeIcon icon={faMapMarkerAlt} color='rgb(89,100,224)' size="lg"/>} />
+            <Input size="large" placeholder="  Filter by location .."
+                   prefix={<FontAwesomeIcon icon={faMapMarkerAlt} color='rgb(89,100,224)' size="lg"/>}
+                   onChange={onParamChang} value={params.location} name = 'location' type='text'
+
+            />
             <S.Border/>
-            <Checkbox onChange={onChange}  className='checkbox'>Full Time Only</Checkbox>
+            <Checkbox className='checkbox'
+                          onChange={onParamChang} checked={params.full_time} name = 'full_time' id='full-time' type='checkbox'
+
+            >Full Time Only</Checkbox>
+
             <Button type="primary" className='btn-search'>Search</Button>
         </S.Wrapper>
 

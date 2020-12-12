@@ -55,7 +55,7 @@ export default function CardJob() {
                 type="error"
                 closable
                 onClose={onClose}
-                style={{width: 450, textAlign:'center' , margin:'auto' ,   position: "absolute" }}
+                style={{width: 450, textAlign:'center' , margin:'250' ,   position: "absolute" }}
             /> }
 
             </S.CardJob>

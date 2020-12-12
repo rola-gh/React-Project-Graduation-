@@ -1,15 +1,23 @@
 import styled from 'styled-components'
 
-export const Descr = styled.div`
-    display:flex;
+export const Wrapper = styled.div`
     background-color:white;
-    position: relative;
     border-radius:7px;
     width : 47%;
-    height: 235vh;
 	padding:35px 25px 35px;   
 	margin: 5px auto 35px;
     `;
+export const SectionOne = styled.div`
+    display:flex;
+    flex-direction: column;
+	width: 500px;
+	position: relative;
+`
+export const DescriptionJob = styled.div`
+	width: 80%;
+	margin-top: 25px;
+	font-size: 16px;	
+`
 export const TimeWithFullTime = styled.div`
 	color: rgba(102,102,102,0.77);
     display: flex;
@@ -30,9 +38,3 @@ export const Location = styled.p`
     color: rgb(89,100,224)
 `
 
-export const DescriptionJob = styled.div`
-	position: absolute;
-	width: 80%;
-	top: 180px
-
-`

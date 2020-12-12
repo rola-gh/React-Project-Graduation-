@@ -1,9 +1,16 @@
-import CompanyCard from './CompanyCard'
-import Description from './Description'
-import HowToApply from './HowToApply'
 import axios from 'axios'
 import {useState , useEffect} from 'react';
 
+import CompanyCard from './CompanyCard'
+import Description from './Description'
+import HowToApply from './HowToApply'
+
+import styled from 'styled-components'
+
+const DetailsPage = styled.div`
+	display: flex;
+	flex-direction: column;
+`
 function Details(props) {
 	const [job, setJob] = useState([]);
 
@@ -25,11 +32,11 @@ function Details(props) {
 	// console.log("props",props+.match.params.id)
 	return (
 
-		<div>
+		<DetailsPage>
 			<CompanyCard job={job}/>
-			{/*<Description job={job}/>*/}
-			{/*<HowToApply job={job}/>*/}
-		</div>
+			<Description job={job} />
+			<HowToApply job={job}/>
+		</DetailsPage>
 
 	);
 

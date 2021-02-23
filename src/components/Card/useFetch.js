@@ -23,7 +23,7 @@ function reducer(state, action) {
 }
 export default  function useFetch(params){
     const [state, dispatch] = useReducer(reducer,initialState );
-
+    // console.log("params fetch :" , params);
     useEffect(()=>{
         const cancelToken= axios.CancelToken.source()
         dispatch({type:"make_request"})
@@ -32,7 +32,7 @@ export default  function useFetch(params){
             params:{markdown:true ,...params }
             }).then(res=>{
                 dispatch({type:"get_data" , payload:{jobs:res.data} })
-            console.log(res.data)
+            // console.log(res.data)
         }) .catch(e => {
             if(axios.isCancel(e))return
             dispatch({type:"error", payload: {error: e} })

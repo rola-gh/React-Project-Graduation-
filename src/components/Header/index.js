@@ -5,9 +5,9 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMoon} from "@fortawesome/free-solid-svg-icons";
 import * as S from './style'
 
-function onChange(checked) {
-    console.log(`switch to ${checked}`);
-}
+// function onChange(checked) {
+//     console.log(`switch to ${checked}`);
+// }
 
 function Header() {
     return (

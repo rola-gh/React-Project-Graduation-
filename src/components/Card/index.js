@@ -10,27 +10,27 @@ const onClose = (e) => {
     console.log(e, 'I was closed.');
 };
 
-
 export default function CardJob() {
-    const [params , setParams] = useState({description :'' , location :'' ,full_time :false});
-    const {jobs ,loading, error} = useFetch(params);
-    // console.log('params is ' , params)
+    const [params , setParams] = useState({});	//description :'' , location :'' ,full_time :false
+	const {jobs ,loading, error} = useFetch(params);
 
+    // console.log('params is ' , params)
 
     function handleParamChange(e) {
         const param = e.target.name
         let value = e.target.value
-	    if(param =='full_time'){
+	    if(param ==='full_time'){
 	    	value = e.target.checked
 	    }
         setParams(prevParams =>{
             return{...prevParams , [param]:value}
         })
-	    console.log('target is' , e.target)
+	    // console.log('target is' , e.target)
     }
+
     return (
         <>
-            <Search params={params} onParamChang={handleParamChange}/>
+            <Search params={params} onParamChang={handleParamChange} />
             <S.CardJob>
             {loading &&
                 <>

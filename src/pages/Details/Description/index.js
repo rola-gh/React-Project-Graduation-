@@ -18,7 +18,10 @@ const buttonApply={
 	height:50,
 	width:120
 }
-
+function handleClick(e) {
+	e.preventDefault();
+	window.location.href='#how_to_apply';
+}
 function Description({job}) {
 	return (
 		 <S.Wrapper>
@@ -30,7 +33,7 @@ function Description({job}) {
 				</S.TimeWithFullTime>
 				<S.Title>{job.title}</S.Title>
 				<S.Location>{job.location}</S.Location>
-				<Button type='primary' style={buttonApply}>Apply Now</Button>
+					<Button type='primary' style={buttonApply} onClick={handleClick}>Apply Now</Button>
 			</S.SectionOne>
 			<S.DescriptionJob>
 				<ReactMarkdown>{job.description}</ReactMarkdown>

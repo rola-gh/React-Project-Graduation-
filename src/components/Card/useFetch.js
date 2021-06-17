@@ -27,12 +27,12 @@ export default  function useFetch(params){
     useEffect(()=>{
         const cancelToken= axios.CancelToken.source()
         dispatch({type:"make_request"})
-        axios.get('https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json', {
+        axios.get('https://jobs.github.com/positions.json', {
             cancelToken: cancelToken.token,
             params:{markdown:true ,...params }
             }).then(res=>{
                 dispatch({type:"get_data" , payload:{jobs:res.data} })
-            // console.log(res.data)
+            console.log(res.data , "data")
         }) .catch(e => {
             if(axios.isCancel(e))return
             dispatch({type:"error", payload: {error: e} })
